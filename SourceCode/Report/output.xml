@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.9.2 on win32)" generated="20210802 14:44:52.553" rpa="false">
+<suite id="s1" name="Testcases" source="D:\Hiendemo\CT hometest\CT hometest\Sunni_Homework\sunniquach\SourceCode\testcases">
+<suite id="s1-s1" name="Wish List" source="D:\Hiendemo\CT hometest\CT hometest\Sunni_Homework\sunniquach\SourceCode\testcases\wish_list.robot">
+<kw name="Open SuperSport Application" library="common_android_keywords" type="setup">
+<doc>Opens a new application to Appium server with capabilities
+{'sunni_device': {'deviceName': 'emulator-5554', 'platformName': 'android', 'platformVersion': '11', 'app': '../../AppFile/SuperSport.apk', 'newCommandTimeout': 300, 'noReset': False, 'autoGrantPermissions': True}} - Device info in dictionary type</doc>
+<arguments>
+<arg>${device_info.sunni_device}</arg>
+</arguments>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>deviceName</arg>
+<arg>${device_info.deviceName}</arg>
+<arg>platformName</arg>
+<arg>${device_info.platformName}</arg>
+<arg>platformVersion</arg>
+<arg>${device_info.platformVersion}</arg>
+<arg>app</arg>
+<arg>${device_info.app}</arg>
+<arg>newCommandTimeout</arg>
+<arg>${device_info.newCommandTimeout}</arg>
+<arg>noReset</arg>
+<arg>${device_info.noReset}</arg>
+<arg>autoGrantPermissions</arg>
+<arg>${device_info.autoGrantPermissions}</arg>
+</arguments>
+<assign>
+<var>${caps}</var>
+</assign>
+<msg timestamp="20210802 14:44:52.765" level="INFO">${caps} = {'deviceName': 'emulator-5554', 'platformName': 'android', 'platformVersion': '11', 'app': '../../AppFile/SuperSport.apk', 'newCommandTimeout': 300, 'noReset': False, 'autoGrantPermissions': True}</msg>
+<status status="PASS" starttime="20210802 14:44:52.764" endtime="20210802 14:44:52.765"></status>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>&amp;{caps}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210802 14:44:54.807" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210802 14:44:54.805" endtime="20210802 14:44:54.807"></status>
+</kw>
+<msg timestamp="20210802 14:44:54.808" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210802 14:44:54.811" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: The application at '../../AppFile/SuperSport.apk' does not exist or is not accessible
+</msg>
+<status status="FAIL" starttime="20210802 14:44:52.765" endtime="20210802 14:44:54.811"></status>
+</kw>
+<status status="FAIL" starttime="20210802 14:44:52.764" endtime="20210802 14:44:54.811"></status>
+</kw>
+<test id="s1-s1-t1" name="Verify member can remove wish list item from wish list page">
+<tags>
+<tag>TC1</tag>
+<tag>wish_list_function</tag>
+</tags>
+<status status="FAIL" starttime="20210802 14:44:54.811" endtime="20210802 14:44:54.812" critical="yes">Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: The application at '../../AppFile/SuperSport.apk' does not exist or is not accessible
+</status>
+</test>
+<test id="s1-s1-t2" name="Verify member can remove wish list item from product detail page">
+<tags>
+<tag>TC2</tag>
+<tag>wish_list_function</tag>
+</tags>
+<status status="FAIL" starttime="20210802 14:44:54.814" endtime="20210802 14:44:54.815" critical="yes">Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: The application at '../../AppFile/SuperSport.apk' does not exist or is not accessible
+</status>
+</test>
+<kw name="Close SuperSport Application" library="common_android_keywords" type="teardown">
+<doc>Close current application while Appium session running</doc>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>AppiumLibrary.Close Application</arg>
+</arguments>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210802 14:44:54.819" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210802 14:44:54.818" endtime="20210802 14:44:54.819"></status>
+</kw>
+<msg timestamp="20210802 14:44:54.819" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210802 14:44:54.821" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210802 14:44:54.817" endtime="20210802 14:44:54.821"></status>
+</kw>
+<status status="PASS" starttime="20210802 14:44:54.817" endtime="20210802 14:44:54.821"></status>
+</kw>
+<status status="PASS" starttime="20210802 14:44:54.817" endtime="20210802 14:44:54.821"></status>
+</kw>
+<status status="FAIL" starttime="20210802 14:44:52.573" endtime="20210802 14:44:54.821">Suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: The application at '../../AppFile/SuperSport.apk' does not exist or is not accessible
+</status>
+</suite>
+<status status="FAIL" starttime="20210802 14:44:52.554" endtime="20210802 14:44:54.824"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2">Critical Tests</stat>
+<stat pass="0" fail="2">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">TC1</stat>
+<stat pass="0" fail="1">TC2</stat>
+<stat pass="0" fail="2">wish_list_function</stat>
+</tag>
+<suite>
+<stat pass="0" fail="2" id="s1" name="Testcases">Testcases</stat>
+<stat pass="0" fail="2" id="s1-s1" name="Wish List">Testcases.Wish List</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210802 14:44:54.808" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210802 14:44:54.819" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>

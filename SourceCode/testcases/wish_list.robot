@@ -1,6 +1,6 @@
 *** Setting ***
 Resource    ${CURDIR}/../keywords/mobile/mobile_import.robot 
-Suite Setup    common_android_keywords.Open SuperSport Application    ${device_info.hien_device}
+Suite Setup    common_android_keywords.Open SuperSport Application    ${device_info.sunni_device}
 Suite Teardown    common_android_keywords.Close SuperSport Application
 
 Force Tags    wish_list_function

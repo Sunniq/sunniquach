@@ -16,7 +16,7 @@ device_info:
     deviceName: emulator-5554
     platformName: android
     platformVersion: '11'
-    app: C:/Users/Admin/Desktop/Hien_Homework/AppFile/SuperSport.apk
+    app: C:/Users/Admin/Desktop/Sunni_Homework/AppFile/SuperSport.apk
     newCommandTimeout: 300
     noReset: False
     autoGrantPermissions: True
