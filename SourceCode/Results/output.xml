@@ -1,0 +1,2282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.9.6 on win32)" generated="20210801 13:32:53.018" rpa="false">
+<suite id="s1" name="Testcases" source="C:\Users\Admin\Desktop\Hien_Homework\SourceCode\testcases">
+<suite id="s1-s1" name="Wish List" source="C:\Users\Admin\Desktop\Hien_Homework\SourceCode\testcases\wish_list.robot">
+<kw name="Open SuperSport Application" library="common_android_keywords" type="setup">
+<doc>Opens a new application to Appium server with capabilities</doc>
+<arguments>
+<arg>${device_info.hien_device}</arg>
+</arguments>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>deviceName</arg>
+<arg>${device_info.deviceName}</arg>
+<arg>platformName</arg>
+<arg>${device_info.platformName}</arg>
+<arg>platformVersion</arg>
+<arg>${device_info.platformVersion}</arg>
+<arg>app</arg>
+<arg>${device_info.app}</arg>
+<arg>newCommandTimeout</arg>
+<arg>${device_info.newCommandTimeout}</arg>
+<arg>noReset</arg>
+<arg>${device_info.noReset}</arg>
+<arg>autoGrantPermissions</arg>
+<arg>${device_info.autoGrantPermissions}</arg>
+</arguments>
+<assign>
+<var>${caps}</var>
+</assign>
+<msg timestamp="20210801 13:32:53.806" level="INFO">${caps} = {'deviceName': 'emulator-5554', 'platformName': 'android', 'platformVersion': '11', 'app': 'C:/Users/Admin/Desktop/Hien_Homework/AppFile/SuperSport.apk', 'newCommandTimeout': 300, 'noReset': False, 'a...</msg>
+<status status="PASS" starttime="20210801 13:32:53.805" endtime="20210801 13:32:53.806"></status>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>&amp;{caps}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:32:53.807" endtime="20210801 13:33:13.655"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:32:53.804" endtime="20210801 13:33:13.656"></status>
+</kw>
+<test id="s1-s1-t1" name="Verify member can remove wish list item from wish list page">
+<kw name="Launch SuperSport application, select language and log in" library="common_android_functions" type="setup">
+<doc>Launch application,select english language and log in</doc>
+<arguments>
+<arg>${customer.wishlist_customer.email}</arg>
+<arg>${customer.wishlist_customer.password}</arg>
+</arguments>
+<kw name="Launch SuperSport Application" library="common_android_keywords">
+<doc>Launch application while Appium session running</doc>
+<kw name="Launch Application" library="AppiumLibrary">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210801 13:33:13.659" endtime="20210801 13:33:21.424"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:13.659" endtime="20210801 13:33:21.425"></status>
+</kw>
+<kw name="Select english language" library="common_android_keywords">
+<doc>Select english language at welcome page</doc>
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${commonPageLocator}[btn_english_language]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:21.427" endtime="20210801 13:33:23.091"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:33:23.094" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/splash_item_name$").text("ENGLISH")'.</msg>
+<status status="PASS" starttime="20210801 13:33:23.092" endtime="20210801 13:33:24.117"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:21.426" endtime="20210801 13:33:24.118"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:21.425" endtime="20210801 13:33:24.118"></status>
+</kw>
+<kw name="Log in to SuperSport application" library="log_in_page_functions">
+<arguments>
+<arg>${user_name}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input customer email" library="login_page">
+<doc>Input email to customer email input
+*Arguments:*
+- _*email*_ : Email of SuperSport user</doc>
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<kw name="Input Text" library="common_android_keywords">
+<arguments>
+<arg>${loginPageLocator}[txt_email]</arg>
+<arg>${email}</arg>
+</arguments>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:24.122" endtime="20210801 13:33:26.923"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:24.121" endtime="20210801 13:33:26.924"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20210801 13:33:26.925" level="INFO">Typing text 'HienQN_SmartOSC@gmail.com' into text field 'android=UiSelector().resourceIdMatches(".*id/editTextFloatLabelTextForm$")'</msg>
+<status status="PASS" starttime="20210801 13:33:26.924" endtime="20210801 13:33:27.508"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:24.120" endtime="20210801 13:33:27.509"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:24.119" endtime="20210801 13:33:27.509"></status>
+</kw>
+<kw name="Input customer password" library="login_page">
+<doc>Input password to customer password input
+*Arguments:*
+- _*password*_ : Password of SuperSport user</doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="common_android_keywords">
+<arguments>
+<arg>${loginPageLocator}[txt_password]</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:27.512" endtime="20210801 13:33:28.797"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:27.511" endtime="20210801 13:33:28.797"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20210801 13:33:28.799" level="INFO">Typing text '12345678' into text field 'android=UiSelector().resourceIdMatches(".*id/editTextPasswordForm$")'</msg>
+<status status="PASS" starttime="20210801 13:33:28.798" endtime="20210801 13:33:29.376"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:27.510" endtime="20210801 13:33:29.376"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:27.509" endtime="20210801 13:33:29.377"></status>
+</kw>
+<kw name="Click login button" library="login_page">
+<doc>Click log in button</doc>
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${loginPageLocator}[btn_login]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:29.379" endtime="20210801 13:33:30.332"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:33:30.335" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/login_button$")'.</msg>
+<status status="PASS" starttime="20210801 13:33:30.333" endtime="20210801 13:33:30.458"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:29.378" endtime="20210801 13:33:30.459"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:29.377" endtime="20210801 13:33:30.459"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:24.118" endtime="20210801 13:33:30.459"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:13.657" endtime="20210801 13:33:30.460"></status>
+</kw>
+<kw name="Customer go to product list page and add product to wish list with any size">
+<arguments>
+<arg>${menu_category.women}</arg>
+</arguments>
+<assign>
+<var>${productDetailDict}</var>
+</assign>
+<kw name="Select category option with option name" library="tool_bar_functions">
+<arguments>
+<arg>${category_name}</arg>
+</arguments>
+<kw name="Select category menu" library="tool_bar_section">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${toolbarSectionLocator}[btn_category_menu]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:30.464" endtime="20210801 13:33:35.471"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:33:35.473" level="INFO">Clicking element 'android=UiSelector().description("Navigate up")'.</msg>
+<status status="PASS" starttime="20210801 13:33:35.471" endtime="20210801 13:33:35.586"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:30.463" endtime="20210801 13:33:35.587"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:30.462" endtime="20210801 13:33:35.587"></status>
+</kw>
+<kw name="Select category option by option name" library="tool_bar_section">
+<arguments>
+<arg>${category_name}</arg>
+</arguments>
+<kw name="Format String" library="String">
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<arguments>
+<arg>${toolbarSectionLocator}[opt_category]</arg>
+<arg>opt_name=${opt_name}</arg>
+</arguments>
+<assign>
+<var>${locator}</var>
+</assign>
+<msg timestamp="20210801 13:33:35.590" level="INFO">${locator} = android=UiSelector().resourceIdMatches(".*id/navigation_item_name$").text("Women")</msg>
+<status status="PASS" starttime="20210801 13:33:35.588" endtime="20210801 13:33:35.590"></status>
+</kw>
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:35.591" endtime="20210801 13:33:36.636"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:33:36.638" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/navigation_item_name$").text("Women")'.</msg>
+<status status="PASS" starttime="20210801 13:33:36.636" endtime="20210801 13:33:36.773"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:35.590" endtime="20210801 13:33:36.773"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:35.587" endtime="20210801 13:33:36.773"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:30.462" endtime="20210801 13:33:36.773"></status>
+</kw>
+<kw name="Click any product in current screen" library="product_list_page">
+<kw name="Get Elements" library="common_android_keywords">
+<doc>This keyword for getting elements after verify these elements is visible
+${elems} - Varargs of locators or elements</doc>
+<arguments>
+<arg>${productListPageLocator}[txt_products_name]</arg>
+</arguments>
+<assign>
+<var>@{list_products}</var>
+</assign>
+<kw name="Verify Elements Are Visible" library="common_android_keywords">
+<doc>This keyword verify that page contains elements specified in arguments and verify each element is visible
+['android=UiSelector().resourceIdMatches(".*id/item_name$")'] - Varargs of locators or elements</doc>
+<arguments>
+<arg>@{elems}</arg>
+</arguments>
+<kw name="${elem} IN [ @{elems} ]" type="for">
+<kw name="${elem} = android=UiSelector().resourceIdMatches(&quot;.*id/item_name$&quot;)" type="foritem">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${elem}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:36.777" endtime="20210801 13:33:40.634"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:36.777" endtime="20210801 13:33:40.634"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:36.777" endtime="20210801 13:33:40.634"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:36.776" endtime="20210801 13:33:40.635"></status>
+</kw>
+<kw name="Get Webelements" library="AppiumLibrary">
+<doc>Returns list of [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] objects matching ``locator``.</doc>
+<arguments>
+<arg>@{elems}</arg>
+</arguments>
+<assign>
+<var>@{elements}</var>
+</assign>
+<msg timestamp="20210801 13:33:40.693" level="INFO">@{elements} = [ &lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="285f1208-cfab-4718-af36-a8a6347c3c61")&gt; | &lt;appium.webdriver.webelement.WebElement (session="f5c2917e...</msg>
+<status status="PASS" starttime="20210801 13:33:40.635" endtime="20210801 13:33:40.693"></status>
+</kw>
+<msg timestamp="20210801 13:33:40.693" level="INFO">@{list_products} = [ &lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="285f1208-cfab-4718-af36-a8a6347c3c61")&gt; | &lt;appium.webdriver.webelement.WebElement (session="f5c2917e...</msg>
+<status status="PASS" starttime="20210801 13:33:36.775" endtime="20210801 13:33:40.693"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${list_products}</arg>
+</arguments>
+<assign>
+<var>${len}</var>
+</assign>
+<msg timestamp="20210801 13:33:40.694" level="INFO">Length is 2</msg>
+<msg timestamp="20210801 13:33:40.694" level="INFO">${len} = 2</msg>
+<status status="PASS" starttime="20210801 13:33:40.693" endtime="20210801 13:33:40.694"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>random.randint(0,${len})</arg>
+</arguments>
+<assign>
+<var>${rand_index}</var>
+</assign>
+<msg timestamp="20210801 13:33:40.694" level="INFO">${rand_index} = 1</msg>
+<status status="PASS" starttime="20210801 13:33:40.694" endtime="20210801 13:33:40.694"></status>
+</kw>
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${list_products}[${rand_index}]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:40.695" endtime="20210801 13:33:40.727"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:33:40.729" level="INFO">Clicking element '&lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="c6cfd4ff-dce6-42f3-a957-0af6782c7917")&gt;'.</msg>
+<status status="PASS" starttime="20210801 13:33:40.728" endtime="20210801 13:33:40.788"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:40.694" endtime="20210801 13:33:40.789"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:36.774" endtime="20210801 13:33:40.789"></status>
+</kw>
+<kw name="Customer add product to wish list with any size" library="product_detail_page_functions">
+<assign>
+<var>${productDetailDict}</var>
+</assign>
+<kw name="Select first option in Choose Size pop up" library="product_detail_page_functions">
+<assign>
+<var>${classification_size_option}</var>
+<var>${first_option_size}</var>
+</assign>
+<kw name="Click Choose Size button" library="product_detail_page">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${productDetailPageLocator}[btn_choose_size]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:40.793" endtime="20210801 13:33:42.667"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:33:42.670" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/product_variant_button$")'.</msg>
+<status status="PASS" starttime="20210801 13:33:42.667" endtime="20210801 13:33:42.803"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:40.792" endtime="20210801 13:33:42.804"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:40.791" endtime="20210801 13:33:42.804"></status>
+</kw>
+<kw name="Get current classification size option for product in Choose Size screen" library="product_detail_page">
+<assign>
+<var>${classification_size_option}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${productDetailPageLocator}[lbl_classification_option]</arg>
+</arguments>
+<assign>
+<var>${classification_size_option}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:42.807" endtime="20210801 13:33:44.028"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:42.806" endtime="20210801 13:33:44.028"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:33:44.117" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*id/tab_page_indicator$").fromParent(UiSelector().className("android.widget.TextView"))' text is 'UK' </msg>
+<msg timestamp="20210801 13:33:44.117" level="INFO">${text} = UK</msg>
+<status status="PASS" starttime="20210801 13:33:44.028" endtime="20210801 13:33:44.117"></status>
+</kw>
+<msg timestamp="20210801 13:33:44.117" level="INFO">${classification_size_option} = UK</msg>
+<status status="PASS" starttime="20210801 13:33:42.805" endtime="20210801 13:33:44.117"></status>
+</kw>
+<msg timestamp="20210801 13:33:44.117" level="INFO">${classification_size_option} = UK</msg>
+<status status="PASS" starttime="20210801 13:33:42.804" endtime="20210801 13:33:44.118"></status>
+</kw>
+<kw name="Click first option in Choose Size screen" library="product_detail_page">
+<assign>
+<var>${first_option_size}</var>
+</assign>
+<kw name="Get Elements" library="common_android_keywords">
+<doc>This keyword for getting elements after verify these elements is visible
+${elems} - Varargs of locators or elements</doc>
+<arguments>
+<arg>${productDetailPageLocator}[lbl_item_options]</arg>
+</arguments>
+<assign>
+<var>@{list_options}</var>
+</assign>
+<kw name="Verify Elements Are Visible" library="common_android_keywords">
+<doc>This keyword verify that page contains elements specified in arguments and verify each element is visible
+['android=UiSelector().resourceIdMatches(".*id/item_text$")'] - Varargs of locators or elements</doc>
+<arguments>
+<arg>@{elems}</arg>
+</arguments>
+<kw name="${elem} IN [ @{elems} ]" type="for">
+<kw name="${elem} = android=UiSelector().resourceIdMatches(&quot;.*id/item_text$&quot;)" type="foritem">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${elem}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:44.120" endtime="20210801 13:33:44.219"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:44.120" endtime="20210801 13:33:44.220"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:44.119" endtime="20210801 13:33:44.220"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:44.119" endtime="20210801 13:33:44.220"></status>
+</kw>
+<kw name="Get Webelements" library="AppiumLibrary">
+<doc>Returns list of [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] objects matching ``locator``.</doc>
+<arguments>
+<arg>@{elems}</arg>
+</arguments>
+<assign>
+<var>@{elements}</var>
+</assign>
+<msg timestamp="20210801 13:33:44.321" level="INFO">@{elements} = [ &lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="82457ffc-8b44-4e9e-9a12-b7573ee38fb3")&gt; | &lt;appium.webdriver.webelement.WebElement (session="f5c2917e...</msg>
+<status status="PASS" starttime="20210801 13:33:44.220" endtime="20210801 13:33:44.321"></status>
+</kw>
+<msg timestamp="20210801 13:33:44.322" level="INFO">@{list_options} = [ &lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="82457ffc-8b44-4e9e-9a12-b7573ee38fb3")&gt; | &lt;appium.webdriver.webelement.WebElement (session="f5c2917e...</msg>
+<status status="PASS" starttime="20210801 13:33:44.118" endtime="20210801 13:33:44.322"></status>
+</kw>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${list_options}[0]</arg>
+</arguments>
+<assign>
+<var>${first_option_size}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:44.323" endtime="20210801 13:33:44.344"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:44.322" endtime="20210801 13:33:44.344"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:33:44.367" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="82457ffc-8b44-4e9e-9a12-b7573ee38fb3")&gt;' text is '2' </msg>
+<msg timestamp="20210801 13:33:44.368" level="INFO">${text} = 2</msg>
+<status status="PASS" starttime="20210801 13:33:44.345" endtime="20210801 13:33:44.368"></status>
+</kw>
+<msg timestamp="20210801 13:33:44.368" level="INFO">${first_option_size} = 2</msg>
+<status status="PASS" starttime="20210801 13:33:44.322" endtime="20210801 13:33:44.368"></status>
+</kw>
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${list_options}[0]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:44.369" endtime="20210801 13:33:44.393"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:33:44.395" level="INFO">Clicking element '&lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="82457ffc-8b44-4e9e-9a12-b7573ee38fb3")&gt;'.</msg>
+<status status="PASS" starttime="20210801 13:33:44.393" endtime="20210801 13:33:45.199"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:44.368" endtime="20210801 13:33:45.199"></status>
+</kw>
+<msg timestamp="20210801 13:33:45.200" level="INFO">${first_option_size} = 2</msg>
+<status status="PASS" starttime="20210801 13:33:44.118" endtime="20210801 13:33:45.200"></status>
+</kw>
+<kw name="Click Ok button in Choose Size screen" library="product_detail_page">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${productDetailPageLocator}[btn_ok_choose_size_pop_up]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:45.201" endtime="20210801 13:33:45.272"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:33:45.274" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/dialog_ok_button$")'.</msg>
+<status status="PASS" starttime="20210801 13:33:45.273" endtime="20210801 13:33:45.375"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:45.200" endtime="20210801 13:33:45.375"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:45.200" endtime="20210801 13:33:45.376"></status>
+</kw>
+<msg timestamp="20210801 13:33:45.376" level="INFO">${classification_size_option} = UK</msg>
+<msg timestamp="20210801 13:33:45.376" level="INFO">${first_option_size} = 2</msg>
+<status status="PASS" starttime="20210801 13:33:40.790" endtime="20210801 13:33:45.376"></status>
+</kw>
+<kw name="Get product detail in product detail page" library="product_detail_page_functions">
+<arguments>
+<arg>${classification_size_option}</arg>
+<arg>${first_option_size}</arg>
+</arguments>
+<assign>
+<var>${productDetailDict}</var>
+</assign>
+<kw name="Get product name" library="product_detail_page">
+<assign>
+<var>${product_name}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${productDetailPageLocator}[txt_product_name]</arg>
+</arguments>
+<assign>
+<var>${product_price}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:45.381" endtime="20210801 13:33:46.019"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:45.380" endtime="20210801 13:33:46.019"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:33:46.073" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*id/product_name$")' text is 'SKECHERS Arch Fit - Lucky Thoughts Women's Casual Shoes' </msg>
+<msg timestamp="20210801 13:33:46.073" level="INFO">${text} = SKECHERS Arch Fit - Lucky Thoughts Women's Casual Shoes</msg>
+<status status="PASS" starttime="20210801 13:33:46.019" endtime="20210801 13:33:46.074"></status>
+</kw>
+<msg timestamp="20210801 13:33:46.074" level="INFO">${product_price} = SKECHERS Arch Fit - Lucky Thoughts Women's Casual Shoes</msg>
+<status status="PASS" starttime="20210801 13:33:45.379" endtime="20210801 13:33:46.074"></status>
+</kw>
+<msg timestamp="20210801 13:33:46.074" level="INFO">${product_name} = SKECHERS Arch Fit - Lucky Thoughts Women's Casual Shoes</msg>
+<status status="PASS" starttime="20210801 13:33:45.378" endtime="20210801 13:33:46.074"></status>
+</kw>
+<kw name="Get product price" library="product_detail_page">
+<assign>
+<var>${product_price}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${productDetailPageLocator}[lbl_product_price]</arg>
+</arguments>
+<assign>
+<var>${product_price}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:46.076" endtime="20210801 13:33:46.136"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:46.075" endtime="20210801 13:33:46.136"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:33:46.192" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*id/product_price_normal$")' text is '2,990 THB' </msg>
+<msg timestamp="20210801 13:33:46.192" level="INFO">${text} = 2,990 THB</msg>
+<status status="PASS" starttime="20210801 13:33:46.136" endtime="20210801 13:33:46.192"></status>
+</kw>
+<msg timestamp="20210801 13:33:46.193" level="INFO">${product_price} = 2,990 THB</msg>
+<status status="PASS" starttime="20210801 13:33:46.074" endtime="20210801 13:33:46.193"></status>
+</kw>
+<msg timestamp="20210801 13:33:46.193" level="INFO">${product_price} = 2,990 THB</msg>
+<status status="PASS" starttime="20210801 13:33:46.074" endtime="20210801 13:33:46.193"></status>
+</kw>
+<kw name="Get product size as format" library="product_detail_page_functions">
+<arguments>
+<arg>${classification size}</arg>
+<arg>${size}</arg>
+</arguments>
+<assign>
+<var>${product_size}</var>
+</assign>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=${EMPTY}</arg>
+<arg>(</arg>
+<arg>${classification size}</arg>
+<arg>)</arg>
+</arguments>
+<assign>
+<var>${classification size_formatted}</var>
+</assign>
+<msg timestamp="20210801 13:33:46.194" level="INFO">${classification size_formatted} = (UK)</msg>
+<status status="PASS" starttime="20210801 13:33:46.193" endtime="20210801 13:33:46.194"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=${SPACE}</arg>
+<arg>${size}</arg>
+<arg>${classification size_formatted}</arg>
+</arguments>
+<assign>
+<var>${size_formatted}</var>
+</assign>
+<msg timestamp="20210801 13:33:46.195" level="INFO">${size_formatted} = 2 (UK)</msg>
+<status status="PASS" starttime="20210801 13:33:46.194" endtime="20210801 13:33:46.195"></status>
+</kw>
+<msg timestamp="20210801 13:33:46.195" level="INFO">${product_size} = 2 (UK)</msg>
+<status status="PASS" starttime="20210801 13:33:46.193" endtime="20210801 13:33:46.195"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<assign>
+<var>${productDetailDict}</var>
+</assign>
+<msg timestamp="20210801 13:33:46.195" level="INFO">${productDetailDict} = {}</msg>
+<status status="PASS" starttime="20210801 13:33:46.195" endtime="20210801 13:33:46.196"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${productDetailDict}</arg>
+<arg>name</arg>
+<arg>${product_name}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:46.196" endtime="20210801 13:33:46.196"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${productDetailDict}</arg>
+<arg>price</arg>
+<arg>${product_price}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:46.196" endtime="20210801 13:33:46.196"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${productDetailDict}</arg>
+<arg>size</arg>
+<arg>${product_size}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:46.197" endtime="20210801 13:33:46.197"></status>
+</kw>
+<msg timestamp="20210801 13:33:46.197" level="INFO">${productDetailDict} = {'name': "SKECHERS Arch Fit - Lucky Thoughts Women's Casual Shoes", 'price': '2,990 THB', 'size': '2 (UK)'}</msg>
+<status status="PASS" starttime="20210801 13:33:45.377" endtime="20210801 13:33:46.197"></status>
+</kw>
+<kw name="Click add to wish list button" library="product_detail_page">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${productDetailPageLocator}[btn_add_to_wishlist]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:46.198" endtime="20210801 13:33:46.253"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:33:46.255" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/wish_list_button$")'.</msg>
+<status status="PASS" starttime="20210801 13:33:46.253" endtime="20210801 13:33:46.864"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:46.198" endtime="20210801 13:33:46.864"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:46.197" endtime="20210801 13:33:46.865"></status>
+</kw>
+<msg timestamp="20210801 13:33:46.865" level="INFO">${productDetailDict} = {'name': "SKECHERS Arch Fit - Lucky Thoughts Women's Casual Shoes", 'price': '2,990 THB', 'size': '2 (UK)'}</msg>
+<status status="PASS" starttime="20210801 13:33:40.789" endtime="20210801 13:33:46.865"></status>
+</kw>
+<msg timestamp="20210801 13:33:46.865" level="INFO">${productDetailDict} = {'name': "SKECHERS Arch Fit - Lucky Thoughts Women's Casual Shoes", 'price': '2,990 THB', 'size': '2 (UK)'}</msg>
+<status status="PASS" starttime="20210801 13:33:30.460" endtime="20210801 13:33:46.865"></status>
+</kw>
+<kw name="Verify number of wishlist item in case customer add product to wishlist then move to wish list page" library="tool_bar_functions">
+<kw name="Get number of item in wishlist" library="tool_bar_section">
+<assign>
+<var>${number_of_item}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${toolbarSectionLocator}[lbl_number_wishlist_item]</arg>
+</arguments>
+<assign>
+<var>${number_of_item_txt}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:46.870" endtime="20210801 13:33:47.808"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:46.869" endtime="20210801 13:33:47.808"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:33:48.535" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*id/wishlist_button$").childSelector(UiSelector().resourceIdMatches(".*id/badge_view$"))' text is '1' </msg>
+<msg timestamp="20210801 13:33:48.535" level="INFO">${text} = 1</msg>
+<status status="PASS" starttime="20210801 13:33:47.809" endtime="20210801 13:33:48.535"></status>
+</kw>
+<msg timestamp="20210801 13:33:48.535" level="INFO">${number_of_item_txt} = 1</msg>
+<status status="PASS" starttime="20210801 13:33:46.868" endtime="20210801 13:33:48.535"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${number_of_item_txt}</arg>
+</arguments>
+<assign>
+<var>${number_of_item}</var>
+</assign>
+<msg timestamp="20210801 13:33:48.536" level="INFO">${number_of_item} = 1</msg>
+<status status="PASS" starttime="20210801 13:33:48.535" endtime="20210801 13:33:48.536"></status>
+</kw>
+<msg timestamp="20210801 13:33:48.536" level="INFO">${number_of_item} = 1</msg>
+<status status="PASS" starttime="20210801 13:33:46.867" endtime="20210801 13:33:48.536"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${number_of_item}==1</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:48.536" endtime="20210801 13:33:48.537"></status>
+</kw>
+<kw name="Click wishlist button" library="tool_bar_section">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${toolbarSectionLocator}[btn_wishlist]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:48.538" endtime="20210801 13:33:48.603"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:33:48.606" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/wishlist_button$")'.</msg>
+<status status="PASS" starttime="20210801 13:33:48.604" endtime="20210801 13:33:48.720"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:48.537" endtime="20210801 13:33:48.721"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:48.537" endtime="20210801 13:33:48.721"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:46.866" endtime="20210801 13:33:48.721"></status>
+</kw>
+<kw name="Customer verify product data is show correctly in wish list page then remove product from wish list" library="wish_list_page_functions">
+<arguments>
+<arg>${productDetailDict}</arg>
+</arguments>
+<kw name="Verify product data is show correctly in wishlist page" library="wish_list_page_functions">
+<arguments>
+<arg>${productDetailDict}</arg>
+</arguments>
+<kw name="Get product name in wish list page" library="wish_list_page">
+<assign>
+<var>${product_name}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${wishListPageLocator}[txt_product_name]</arg>
+</arguments>
+<assign>
+<var>${product_name}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:48.727" endtime="20210801 13:33:49.933"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:48.725" endtime="20210801 13:33:49.933"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:33:49.987" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*id/item_name$")' text is 'SKECHERS Arch Fit - Lucky Thoughts Women's Casual Shoes' </msg>
+<msg timestamp="20210801 13:33:49.987" level="INFO">${text} = SKECHERS Arch Fit - Lucky Thoughts Women's Casual Shoes</msg>
+<status status="PASS" starttime="20210801 13:33:49.933" endtime="20210801 13:33:49.987"></status>
+</kw>
+<msg timestamp="20210801 13:33:49.987" level="INFO">${product_name} = SKECHERS Arch Fit - Lucky Thoughts Women's Casual Shoes</msg>
+<status status="PASS" starttime="20210801 13:33:48.724" endtime="20210801 13:33:49.987"></status>
+</kw>
+<msg timestamp="20210801 13:33:49.987" level="INFO">${product_name} = SKECHERS Arch Fit - Lucky Thoughts Women's Casual Shoes</msg>
+<status status="PASS" starttime="20210801 13:33:48.724" endtime="20210801 13:33:49.987"></status>
+</kw>
+<kw name="Get product price in wish list page" library="wish_list_page">
+<assign>
+<var>${product_price}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${wishListPageLocator}[lbl_product_price]</arg>
+</arguments>
+<assign>
+<var>${product_price}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:49.989" endtime="20210801 13:33:50.054"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:49.989" endtime="20210801 13:33:50.054"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:33:50.132" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*:id/item_price$")' text is '2,990 THB' </msg>
+<msg timestamp="20210801 13:33:50.133" level="INFO">${text} = 2,990 THB</msg>
+<status status="PASS" starttime="20210801 13:33:50.054" endtime="20210801 13:33:50.133"></status>
+</kw>
+<msg timestamp="20210801 13:33:50.133" level="INFO">${product_price} = 2,990 THB</msg>
+<status status="PASS" starttime="20210801 13:33:49.988" endtime="20210801 13:33:50.133"></status>
+</kw>
+<msg timestamp="20210801 13:33:50.133" level="INFO">${product_price} = 2,990 THB</msg>
+<status status="PASS" starttime="20210801 13:33:49.988" endtime="20210801 13:33:50.133"></status>
+</kw>
+<kw name="Get product size in wish list page" library="wish_list_page">
+<assign>
+<var>${product_size}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${wishListPageLocator}[lbl_product_size]</arg>
+</arguments>
+<assign>
+<var>${product_size}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:50.135" endtime="20210801 13:33:50.194"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:50.134" endtime="20210801 13:33:50.195"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:33:50.243" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*:id/product_variant_button$")' text is '2 (UK)' </msg>
+<msg timestamp="20210801 13:33:50.243" level="INFO">${text} = 2 (UK)</msg>
+<status status="PASS" starttime="20210801 13:33:50.195" endtime="20210801 13:33:50.243"></status>
+</kw>
+<msg timestamp="20210801 13:33:50.243" level="INFO">${product_size} = 2 (UK)</msg>
+<status status="PASS" starttime="20210801 13:33:50.134" endtime="20210801 13:33:50.243"></status>
+</kw>
+<msg timestamp="20210801 13:33:50.243" level="INFO">${product_size} = 2 (UK)</msg>
+<status status="PASS" starttime="20210801 13:33:50.133" endtime="20210801 13:33:50.243"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${product_name}</arg>
+<arg>${productDetailDict.name}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:50.243" endtime="20210801 13:33:50.244"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${product_price}</arg>
+<arg>${productDetailDict.price}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:50.245" endtime="20210801 13:33:50.245"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${product_size}</arg>
+<arg>${productDetailDict.size}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:50.245" endtime="20210801 13:33:50.246"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:48.723" endtime="20210801 13:33:50.246"></status>
+</kw>
+<kw name="Remove product in wish list page" library="wish_list_page">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${wishListPageLocator}[btn_delete_product]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:50.247" endtime="20210801 13:33:50.305"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:33:50.307" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/delete_button$")'.</msg>
+<status status="PASS" starttime="20210801 13:33:50.305" endtime="20210801 13:33:50.412"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:50.246" endtime="20210801 13:33:50.412"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:50.246" endtime="20210801 13:33:50.412"></status>
+</kw>
+<kw name="Verify customer wish list is empty" library="wish_list_page_functions">
+<kw name="Verify empty wishlist icon is displayed" library="wish_list_page">
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${wishListPageLocator}[icon_empty_wishlist]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:50.415" endtime="20210801 13:33:50.494"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:50.414" endtime="20210801 13:33:50.495"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:50.414" endtime="20210801 13:33:50.495"></status>
+</kw>
+<kw name="Verify empty wishlist text is displayed" library="wish_list_page">
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${wishListPageLocator}[txt_empty_wishlist]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:50.496" endtime="20210801 13:33:51.299"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:50.496" endtime="20210801 13:33:51.300"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:50.495" endtime="20210801 13:33:51.300"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:50.413" endtime="20210801 13:33:51.300"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:48.722" endtime="20210801 13:33:51.300"></status>
+</kw>
+<tags>
+<tag>TC1</tag>
+<tag>wish_list_function</tag>
+</tags>
+<status status="PASS" starttime="20210801 13:33:13.656" endtime="20210801 13:33:51.301" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="Verify member can remove wish list item from product detail page">
+<kw name="Launch SuperSport application, select language and log in" library="common_android_functions" type="setup">
+<doc>Launch application,select english language and log in</doc>
+<arguments>
+<arg>${customer.wishlist_customer.email}</arg>
+<arg>${customer.wishlist_customer.password}</arg>
+</arguments>
+<kw name="Launch SuperSport Application" library="common_android_keywords">
+<doc>Launch application while Appium session running</doc>
+<kw name="Launch Application" library="AppiumLibrary">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210801 13:33:51.306" endtime="20210801 13:33:58.290"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:51.305" endtime="20210801 13:33:58.291"></status>
+</kw>
+<kw name="Select english language" library="common_android_keywords">
+<doc>Select english language at welcome page</doc>
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${commonPageLocator}[btn_english_language]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:33:58.293" endtime="20210801 13:34:00.190"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:00.191" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/splash_item_name$").text("ENGLISH")'.</msg>
+<status status="PASS" starttime="20210801 13:34:00.190" endtime="20210801 13:34:01.557"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:58.292" endtime="20210801 13:34:01.557"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:58.291" endtime="20210801 13:34:01.557"></status>
+</kw>
+<kw name="Log in to SuperSport application" library="log_in_page_functions">
+<arguments>
+<arg>${user_name}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input customer email" library="login_page">
+<doc>Input email to customer email input
+*Arguments:*
+- _*email*_ : Email of SuperSport user</doc>
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<kw name="Input Text" library="common_android_keywords">
+<arguments>
+<arg>${loginPageLocator}[txt_email]</arg>
+<arg>${email}</arg>
+</arguments>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:01.561" endtime="20210801 13:34:03.967"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:01.560" endtime="20210801 13:34:03.967"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:03.969" level="INFO">Typing text 'HienQN_SmartOSC@gmail.com' into text field 'android=UiSelector().resourceIdMatches(".*id/editTextFloatLabelTextForm$")'</msg>
+<status status="PASS" starttime="20210801 13:34:03.968" endtime="20210801 13:34:04.542"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:01.559" endtime="20210801 13:34:04.543"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:01.558" endtime="20210801 13:34:04.543"></status>
+</kw>
+<kw name="Input customer password" library="login_page">
+<doc>Input password to customer password input
+*Arguments:*
+- _*password*_ : Password of SuperSport user</doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="common_android_keywords">
+<arguments>
+<arg>${loginPageLocator}[txt_password]</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:04.545" endtime="20210801 13:34:05.396"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:04.544" endtime="20210801 13:34:05.396"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:05.398" level="INFO">Typing text '12345678' into text field 'android=UiSelector().resourceIdMatches(".*id/editTextPasswordForm$")'</msg>
+<status status="PASS" starttime="20210801 13:34:05.397" endtime="20210801 13:34:05.977"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:04.544" endtime="20210801 13:34:05.977"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:04.543" endtime="20210801 13:34:05.977"></status>
+</kw>
+<kw name="Click login button" library="login_page">
+<doc>Click log in button</doc>
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${loginPageLocator}[btn_login]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:05.979" endtime="20210801 13:34:07.196"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:07.198" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/login_button$")'.</msg>
+<status status="PASS" starttime="20210801 13:34:07.196" endtime="20210801 13:34:07.298"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:05.978" endtime="20210801 13:34:07.299"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:05.978" endtime="20210801 13:34:07.299"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:01.558" endtime="20210801 13:34:07.299"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:33:51.304" endtime="20210801 13:34:07.299"></status>
+</kw>
+<kw name="Customer go to product list page and add product to wish list with any size">
+<arguments>
+<arg>${menu_category.men}</arg>
+</arguments>
+<assign>
+<var>${productDetailDict}</var>
+</assign>
+<kw name="Select category option with option name" library="tool_bar_functions">
+<arguments>
+<arg>${category_name}</arg>
+</arguments>
+<kw name="Select category menu" library="tool_bar_section">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${toolbarSectionLocator}[btn_category_menu]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:07.304" endtime="20210801 13:34:12.059"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:12.062" level="INFO">Clicking element 'android=UiSelector().description("Navigate up")'.</msg>
+<status status="PASS" starttime="20210801 13:34:12.060" endtime="20210801 13:34:12.159"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:07.303" endtime="20210801 13:34:12.160"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:07.302" endtime="20210801 13:34:12.160"></status>
+</kw>
+<kw name="Select category option by option name" library="tool_bar_section">
+<arguments>
+<arg>${category_name}</arg>
+</arguments>
+<kw name="Format String" library="String">
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<arguments>
+<arg>${toolbarSectionLocator}[opt_category]</arg>
+<arg>opt_name=${opt_name}</arg>
+</arguments>
+<assign>
+<var>${locator}</var>
+</assign>
+<msg timestamp="20210801 13:34:12.163" level="INFO">${locator} = android=UiSelector().resourceIdMatches(".*id/navigation_item_name$").text("Men")</msg>
+<status status="PASS" starttime="20210801 13:34:12.162" endtime="20210801 13:34:12.163"></status>
+</kw>
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:12.165" endtime="20210801 13:34:13.166"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:13.170" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/navigation_item_name$").text("Men")'.</msg>
+<status status="PASS" starttime="20210801 13:34:13.167" endtime="20210801 13:34:13.306"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:12.164" endtime="20210801 13:34:13.306"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:12.160" endtime="20210801 13:34:13.306"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:07.301" endtime="20210801 13:34:13.307"></status>
+</kw>
+<kw name="Click any product in current screen" library="product_list_page">
+<kw name="Get Elements" library="common_android_keywords">
+<doc>This keyword for getting elements after verify these elements is visible
+${elems} - Varargs of locators or elements</doc>
+<arguments>
+<arg>${productListPageLocator}[txt_products_name]</arg>
+</arguments>
+<assign>
+<var>@{list_products}</var>
+</assign>
+<kw name="Verify Elements Are Visible" library="common_android_keywords">
+<doc>This keyword verify that page contains elements specified in arguments and verify each element is visible
+['android=UiSelector().resourceIdMatches(".*id/item_name$")'] - Varargs of locators or elements</doc>
+<arguments>
+<arg>@{elems}</arg>
+</arguments>
+<kw name="${elem} IN [ @{elems} ]" type="for">
+<kw name="${elem} = android=UiSelector().resourceIdMatches(&quot;.*id/item_name$&quot;)" type="foritem">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${elem}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:13.311" endtime="20210801 13:34:17.311"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:13.310" endtime="20210801 13:34:17.311"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:13.310" endtime="20210801 13:34:17.311"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:13.309" endtime="20210801 13:34:17.312"></status>
+</kw>
+<kw name="Get Webelements" library="AppiumLibrary">
+<doc>Returns list of [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] objects matching ``locator``.</doc>
+<arguments>
+<arg>@{elems}</arg>
+</arguments>
+<assign>
+<var>@{elements}</var>
+</assign>
+<msg timestamp="20210801 13:34:17.364" level="INFO">@{elements} = [ &lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="b50fbf5e-3a3b-4fd2-b2b8-007906b9ba0d")&gt; | &lt;appium.webdriver.webelement.WebElement (session="f5c2917e...</msg>
+<status status="PASS" starttime="20210801 13:34:17.312" endtime="20210801 13:34:17.364"></status>
+</kw>
+<msg timestamp="20210801 13:34:17.365" level="INFO">@{list_products} = [ &lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="b50fbf5e-3a3b-4fd2-b2b8-007906b9ba0d")&gt; | &lt;appium.webdriver.webelement.WebElement (session="f5c2917e...</msg>
+<status status="PASS" starttime="20210801 13:34:13.308" endtime="20210801 13:34:17.365"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${list_products}</arg>
+</arguments>
+<assign>
+<var>${len}</var>
+</assign>
+<msg timestamp="20210801 13:34:17.365" level="INFO">Length is 2</msg>
+<msg timestamp="20210801 13:34:17.365" level="INFO">${len} = 2</msg>
+<status status="PASS" starttime="20210801 13:34:17.365" endtime="20210801 13:34:17.365"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>random.randint(0,${len})</arg>
+</arguments>
+<assign>
+<var>${rand_index}</var>
+</assign>
+<msg timestamp="20210801 13:34:17.366" level="INFO">${rand_index} = 1</msg>
+<status status="PASS" starttime="20210801 13:34:17.366" endtime="20210801 13:34:17.366"></status>
+</kw>
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${list_products}[${rand_index}]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:17.367" endtime="20210801 13:34:17.395"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:17.398" level="INFO">Clicking element '&lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="a3689c0d-e05b-4ce0-8417-33c220b7d8e1")&gt;'.</msg>
+<status status="PASS" starttime="20210801 13:34:17.396" endtime="20210801 13:34:17.464"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:17.366" endtime="20210801 13:34:17.465"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:13.307" endtime="20210801 13:34:17.465"></status>
+</kw>
+<kw name="Customer add product to wish list with any size" library="product_detail_page_functions">
+<assign>
+<var>${productDetailDict}</var>
+</assign>
+<kw name="Select first option in Choose Size pop up" library="product_detail_page_functions">
+<assign>
+<var>${classification_size_option}</var>
+<var>${first_option_size}</var>
+</assign>
+<kw name="Click Choose Size button" library="product_detail_page">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${productDetailPageLocator}[btn_choose_size]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:17.468" endtime="20210801 13:34:19.682"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:19.684" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/product_variant_button$")'.</msg>
+<status status="PASS" starttime="20210801 13:34:19.682" endtime="20210801 13:34:19.785"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:17.467" endtime="20210801 13:34:19.785"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:17.467" endtime="20210801 13:34:19.785"></status>
+</kw>
+<kw name="Get current classification size option for product in Choose Size screen" library="product_detail_page">
+<assign>
+<var>${classification_size_option}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${productDetailPageLocator}[lbl_classification_option]</arg>
+</arguments>
+<assign>
+<var>${classification_size_option}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:19.788" endtime="20210801 13:34:20.925"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:19.787" endtime="20210801 13:34:20.925"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:34:20.975" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*id/tab_page_indicator$").fromParent(UiSelector().className("android.widget.TextView"))' text is 'UK' </msg>
+<msg timestamp="20210801 13:34:20.976" level="INFO">${text} = UK</msg>
+<status status="PASS" starttime="20210801 13:34:20.925" endtime="20210801 13:34:20.976"></status>
+</kw>
+<msg timestamp="20210801 13:34:20.976" level="INFO">${classification_size_option} = UK</msg>
+<status status="PASS" starttime="20210801 13:34:19.786" endtime="20210801 13:34:20.976"></status>
+</kw>
+<msg timestamp="20210801 13:34:20.976" level="INFO">${classification_size_option} = UK</msg>
+<status status="PASS" starttime="20210801 13:34:19.786" endtime="20210801 13:34:20.976"></status>
+</kw>
+<kw name="Click first option in Choose Size screen" library="product_detail_page">
+<assign>
+<var>${first_option_size}</var>
+</assign>
+<kw name="Get Elements" library="common_android_keywords">
+<doc>This keyword for getting elements after verify these elements is visible
+${elems} - Varargs of locators or elements</doc>
+<arguments>
+<arg>${productDetailPageLocator}[lbl_item_options]</arg>
+</arguments>
+<assign>
+<var>@{list_options}</var>
+</assign>
+<kw name="Verify Elements Are Visible" library="common_android_keywords">
+<doc>This keyword verify that page contains elements specified in arguments and verify each element is visible
+['android=UiSelector().resourceIdMatches(".*id/item_text$")'] - Varargs of locators or elements</doc>
+<arguments>
+<arg>@{elems}</arg>
+</arguments>
+<kw name="${elem} IN [ @{elems} ]" type="for">
+<kw name="${elem} = android=UiSelector().resourceIdMatches(&quot;.*id/item_text$&quot;)" type="foritem">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${elem}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:20.979" endtime="20210801 13:34:21.043"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:20.979" endtime="20210801 13:34:21.043"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:20.979" endtime="20210801 13:34:21.043"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:20.978" endtime="20210801 13:34:21.043"></status>
+</kw>
+<kw name="Get Webelements" library="AppiumLibrary">
+<doc>Returns list of [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] objects matching ``locator``.</doc>
+<arguments>
+<arg>@{elems}</arg>
+</arguments>
+<assign>
+<var>@{elements}</var>
+</assign>
+<msg timestamp="20210801 13:34:21.097" level="INFO">@{elements} = [ &lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="2c0ccf58-9e4e-45e5-a552-06889283feb8")&gt; | &lt;appium.webdriver.webelement.WebElement (session="f5c2917e...</msg>
+<status status="PASS" starttime="20210801 13:34:21.044" endtime="20210801 13:34:21.097"></status>
+</kw>
+<msg timestamp="20210801 13:34:21.097" level="INFO">@{list_options} = [ &lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="2c0ccf58-9e4e-45e5-a552-06889283feb8")&gt; | &lt;appium.webdriver.webelement.WebElement (session="f5c2917e...</msg>
+<status status="PASS" starttime="20210801 13:34:20.978" endtime="20210801 13:34:21.097"></status>
+</kw>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${list_options}[0]</arg>
+</arguments>
+<assign>
+<var>${first_option_size}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:21.098" endtime="20210801 13:34:21.123"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:21.098" endtime="20210801 13:34:21.123"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:34:21.144" level="INFO">Element '&lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="2c0ccf58-9e4e-45e5-a552-06889283feb8")&gt;' text is 'S' </msg>
+<msg timestamp="20210801 13:34:21.144" level="INFO">${text} = S</msg>
+<status status="PASS" starttime="20210801 13:34:21.123" endtime="20210801 13:34:21.144"></status>
+</kw>
+<msg timestamp="20210801 13:34:21.145" level="INFO">${first_option_size} = S</msg>
+<status status="PASS" starttime="20210801 13:34:21.097" endtime="20210801 13:34:21.145"></status>
+</kw>
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${list_options}[0]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:21.146" endtime="20210801 13:34:21.169"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:21.172" level="INFO">Clicking element '&lt;appium.webdriver.webelement.WebElement (session="f5c2917e-c5aa-4add-8891-a8562d615138", element="2c0ccf58-9e4e-45e5-a552-06889283feb8")&gt;'.</msg>
+<status status="PASS" starttime="20210801 13:34:21.170" endtime="20210801 13:34:21.968"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:21.145" endtime="20210801 13:34:21.968"></status>
+</kw>
+<msg timestamp="20210801 13:34:21.968" level="INFO">${first_option_size} = S</msg>
+<status status="PASS" starttime="20210801 13:34:20.977" endtime="20210801 13:34:21.968"></status>
+</kw>
+<kw name="Click Ok button in Choose Size screen" library="product_detail_page">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${productDetailPageLocator}[btn_ok_choose_size_pop_up]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:21.970" endtime="20210801 13:34:22.032"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:22.033" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/dialog_ok_button$")'.</msg>
+<status status="PASS" starttime="20210801 13:34:22.032" endtime="20210801 13:34:22.121"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:21.969" endtime="20210801 13:34:22.121"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:21.969" endtime="20210801 13:34:22.121"></status>
+</kw>
+<msg timestamp="20210801 13:34:22.122" level="INFO">${classification_size_option} = UK</msg>
+<msg timestamp="20210801 13:34:22.122" level="INFO">${first_option_size} = S</msg>
+<status status="PASS" starttime="20210801 13:34:17.466" endtime="20210801 13:34:22.122"></status>
+</kw>
+<kw name="Get product detail in product detail page" library="product_detail_page_functions">
+<arguments>
+<arg>${classification_size_option}</arg>
+<arg>${first_option_size}</arg>
+</arguments>
+<assign>
+<var>${productDetailDict}</var>
+</assign>
+<kw name="Get product name" library="product_detail_page">
+<assign>
+<var>${product_name}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${productDetailPageLocator}[txt_product_name]</arg>
+</arguments>
+<assign>
+<var>${product_price}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:22.127" endtime="20210801 13:34:22.821"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:22.126" endtime="20210801 13:34:22.822"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:34:22.884" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*id/product_name$")' text is 'ADIDAS Men's Arsenal Home 2021/22 Jersey' </msg>
+<msg timestamp="20210801 13:34:22.884" level="INFO">${text} = ADIDAS Men's Arsenal Home 2021/22 Jersey</msg>
+<status status="PASS" starttime="20210801 13:34:22.822" endtime="20210801 13:34:22.884"></status>
+</kw>
+<msg timestamp="20210801 13:34:22.884" level="INFO">${product_price} = ADIDAS Men's Arsenal Home 2021/22 Jersey</msg>
+<status status="PASS" starttime="20210801 13:34:22.125" endtime="20210801 13:34:22.885"></status>
+</kw>
+<msg timestamp="20210801 13:34:22.885" level="INFO">${product_name} = ADIDAS Men's Arsenal Home 2021/22 Jersey</msg>
+<status status="PASS" starttime="20210801 13:34:22.124" endtime="20210801 13:34:22.885"></status>
+</kw>
+<kw name="Get product price" library="product_detail_page">
+<assign>
+<var>${product_price}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${productDetailPageLocator}[lbl_product_price]</arg>
+</arguments>
+<assign>
+<var>${product_price}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:22.886" endtime="20210801 13:34:22.961"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:22.886" endtime="20210801 13:34:22.961"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:34:23.022" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*id/product_price_normal$")' text is '2,800 THB' </msg>
+<msg timestamp="20210801 13:34:23.023" level="INFO">${text} = 2,800 THB</msg>
+<status status="PASS" starttime="20210801 13:34:22.962" endtime="20210801 13:34:23.023"></status>
+</kw>
+<msg timestamp="20210801 13:34:23.023" level="INFO">${product_price} = 2,800 THB</msg>
+<status status="PASS" starttime="20210801 13:34:22.885" endtime="20210801 13:34:23.023"></status>
+</kw>
+<msg timestamp="20210801 13:34:23.024" level="INFO">${product_price} = 2,800 THB</msg>
+<status status="PASS" starttime="20210801 13:34:22.885" endtime="20210801 13:34:23.024"></status>
+</kw>
+<kw name="Get product size as format" library="product_detail_page_functions">
+<arguments>
+<arg>${classification size}</arg>
+<arg>${size}</arg>
+</arguments>
+<assign>
+<var>${product_size}</var>
+</assign>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=${EMPTY}</arg>
+<arg>(</arg>
+<arg>${classification size}</arg>
+<arg>)</arg>
+</arguments>
+<assign>
+<var>${classification size_formatted}</var>
+</assign>
+<msg timestamp="20210801 13:34:23.026" level="INFO">${classification size_formatted} = (UK)</msg>
+<status status="PASS" starttime="20210801 13:34:23.025" endtime="20210801 13:34:23.026"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=${SPACE}</arg>
+<arg>${size}</arg>
+<arg>${classification size_formatted}</arg>
+</arguments>
+<assign>
+<var>${size_formatted}</var>
+</assign>
+<msg timestamp="20210801 13:34:23.027" level="INFO">${size_formatted} = S (UK)</msg>
+<status status="PASS" starttime="20210801 13:34:23.026" endtime="20210801 13:34:23.027"></status>
+</kw>
+<msg timestamp="20210801 13:34:23.027" level="INFO">${product_size} = S (UK)</msg>
+<status status="PASS" starttime="20210801 13:34:23.024" endtime="20210801 13:34:23.027"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<assign>
+<var>${productDetailDict}</var>
+</assign>
+<msg timestamp="20210801 13:34:23.028" level="INFO">${productDetailDict} = {}</msg>
+<status status="PASS" starttime="20210801 13:34:23.028" endtime="20210801 13:34:23.028"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${productDetailDict}</arg>
+<arg>name</arg>
+<arg>${product_name}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:23.029" endtime="20210801 13:34:23.029"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${productDetailDict}</arg>
+<arg>price</arg>
+<arg>${product_price}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:23.029" endtime="20210801 13:34:23.030"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${productDetailDict}</arg>
+<arg>size</arg>
+<arg>${product_size}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:23.030" endtime="20210801 13:34:23.031"></status>
+</kw>
+<msg timestamp="20210801 13:34:23.031" level="INFO">${productDetailDict} = {'name': "ADIDAS Men's Arsenal Home 2021/22 Jersey", 'price': '2,800 THB', 'size': 'S (UK)'}</msg>
+<status status="PASS" starttime="20210801 13:34:22.122" endtime="20210801 13:34:23.031"></status>
+</kw>
+<kw name="Click add to wish list button" library="product_detail_page">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${productDetailPageLocator}[btn_add_to_wishlist]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:23.034" endtime="20210801 13:34:23.100"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:23.102" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/wish_list_button$")'.</msg>
+<status status="PASS" starttime="20210801 13:34:23.100" endtime="20210801 13:34:23.203"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:23.033" endtime="20210801 13:34:23.203"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:23.032" endtime="20210801 13:34:23.204"></status>
+</kw>
+<msg timestamp="20210801 13:34:23.204" level="INFO">${productDetailDict} = {'name': "ADIDAS Men's Arsenal Home 2021/22 Jersey", 'price': '2,800 THB', 'size': 'S (UK)'}</msg>
+<status status="PASS" starttime="20210801 13:34:17.465" endtime="20210801 13:34:23.204"></status>
+</kw>
+<msg timestamp="20210801 13:34:23.204" level="INFO">${productDetailDict} = {'name': "ADIDAS Men's Arsenal Home 2021/22 Jersey", 'price': '2,800 THB', 'size': 'S (UK)'}</msg>
+<status status="PASS" starttime="20210801 13:34:07.300" endtime="20210801 13:34:23.204"></status>
+</kw>
+<kw name="Verify number of wishlist item in case customer add product to wishlist then move to wish list page" library="tool_bar_functions">
+<kw name="Get number of item in wishlist" library="tool_bar_section">
+<assign>
+<var>${number_of_item}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${toolbarSectionLocator}[lbl_number_wishlist_item]</arg>
+</arguments>
+<assign>
+<var>${number_of_item_txt}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:23.209" endtime="20210801 13:34:24.657"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:23.208" endtime="20210801 13:34:24.657"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:34:25.385" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*id/wishlist_button$").childSelector(UiSelector().resourceIdMatches(".*id/badge_view$"))' text is '1' </msg>
+<msg timestamp="20210801 13:34:25.385" level="INFO">${text} = 1</msg>
+<status status="PASS" starttime="20210801 13:34:24.658" endtime="20210801 13:34:25.385"></status>
+</kw>
+<msg timestamp="20210801 13:34:25.385" level="INFO">${number_of_item_txt} = 1</msg>
+<status status="PASS" starttime="20210801 13:34:23.207" endtime="20210801 13:34:25.385"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${number_of_item_txt}</arg>
+</arguments>
+<assign>
+<var>${number_of_item}</var>
+</assign>
+<msg timestamp="20210801 13:34:25.386" level="INFO">${number_of_item} = 1</msg>
+<status status="PASS" starttime="20210801 13:34:25.386" endtime="20210801 13:34:25.386"></status>
+</kw>
+<msg timestamp="20210801 13:34:25.386" level="INFO">${number_of_item} = 1</msg>
+<status status="PASS" starttime="20210801 13:34:23.206" endtime="20210801 13:34:25.386"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${number_of_item}==1</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:25.386" endtime="20210801 13:34:25.387"></status>
+</kw>
+<kw name="Click wishlist button" library="tool_bar_section">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${toolbarSectionLocator}[btn_wishlist]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:25.387" endtime="20210801 13:34:25.454"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:25.456" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/wishlist_button$")'.</msg>
+<status status="PASS" starttime="20210801 13:34:25.454" endtime="20210801 13:34:25.561"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:25.387" endtime="20210801 13:34:25.561"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:25.387" endtime="20210801 13:34:25.561"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:23.205" endtime="20210801 13:34:25.561"></status>
+</kw>
+<kw name="Customer verify product data is show correctly in wish list page then go to product detail page" library="wish_list_page_functions">
+<arguments>
+<arg>${productDetailDict}</arg>
+</arguments>
+<kw name="Verify product data is show correctly in wishlist page" library="wish_list_page_functions">
+<arguments>
+<arg>${productDetailDict}</arg>
+</arguments>
+<kw name="Get product name in wish list page" library="wish_list_page">
+<assign>
+<var>${product_name}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${wishListPageLocator}[txt_product_name]</arg>
+</arguments>
+<assign>
+<var>${product_name}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:25.567" endtime="20210801 13:34:26.734"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:25.566" endtime="20210801 13:34:26.735"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:34:26.791" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*id/item_name$")' text is 'ADIDAS Men's Arsenal Home 2021/22 Jersey' </msg>
+<msg timestamp="20210801 13:34:26.791" level="INFO">${text} = ADIDAS Men's Arsenal Home 2021/22 Jersey</msg>
+<status status="PASS" starttime="20210801 13:34:26.735" endtime="20210801 13:34:26.791"></status>
+</kw>
+<msg timestamp="20210801 13:34:26.791" level="INFO">${product_name} = ADIDAS Men's Arsenal Home 2021/22 Jersey</msg>
+<status status="PASS" starttime="20210801 13:34:25.565" endtime="20210801 13:34:26.792"></status>
+</kw>
+<msg timestamp="20210801 13:34:26.792" level="INFO">${product_name} = ADIDAS Men's Arsenal Home 2021/22 Jersey</msg>
+<status status="PASS" starttime="20210801 13:34:25.564" endtime="20210801 13:34:26.792"></status>
+</kw>
+<kw name="Get product price in wish list page" library="wish_list_page">
+<assign>
+<var>${product_price}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${wishListPageLocator}[lbl_product_price]</arg>
+</arguments>
+<assign>
+<var>${product_price}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:26.794" endtime="20210801 13:34:26.850"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:26.793" endtime="20210801 13:34:26.850"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:34:26.905" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*:id/item_price$")' text is '2,800 THB' </msg>
+<msg timestamp="20210801 13:34:26.905" level="INFO">${text} = 2,800 THB</msg>
+<status status="PASS" starttime="20210801 13:34:26.850" endtime="20210801 13:34:26.905"></status>
+</kw>
+<msg timestamp="20210801 13:34:26.905" level="INFO">${product_price} = 2,800 THB</msg>
+<status status="PASS" starttime="20210801 13:34:26.793" endtime="20210801 13:34:26.905"></status>
+</kw>
+<msg timestamp="20210801 13:34:26.905" level="INFO">${product_price} = 2,800 THB</msg>
+<status status="PASS" starttime="20210801 13:34:26.792" endtime="20210801 13:34:26.905"></status>
+</kw>
+<kw name="Get product size in wish list page" library="wish_list_page">
+<assign>
+<var>${product_size}</var>
+</assign>
+<kw name="Get Text" library="common_android_keywords">
+<arguments>
+<arg>${wishListPageLocator}[lbl_product_size]</arg>
+</arguments>
+<assign>
+<var>${product_size}</var>
+</assign>
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:26.907" endtime="20210801 13:34:26.964"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:26.906" endtime="20210801 13:34:26.965"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210801 13:34:27.024" level="INFO">Element 'android=UiSelector().resourceIdMatches(".*:id/product_variant_button$")' text is 'S (UK)' </msg>
+<msg timestamp="20210801 13:34:27.024" level="INFO">${text} = S (UK)</msg>
+<status status="PASS" starttime="20210801 13:34:26.965" endtime="20210801 13:34:27.024"></status>
+</kw>
+<msg timestamp="20210801 13:34:27.024" level="INFO">${product_size} = S (UK)</msg>
+<status status="PASS" starttime="20210801 13:34:26.906" endtime="20210801 13:34:27.024"></status>
+</kw>
+<msg timestamp="20210801 13:34:27.024" level="INFO">${product_size} = S (UK)</msg>
+<status status="PASS" starttime="20210801 13:34:26.906" endtime="20210801 13:34:27.024"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${product_name}</arg>
+<arg>${productDetailDict.name}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:27.025" endtime="20210801 13:34:27.025"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${product_price}</arg>
+<arg>${productDetailDict.price}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:27.026" endtime="20210801 13:34:27.026"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${product_size}</arg>
+<arg>${productDetailDict.size}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:27.027" endtime="20210801 13:34:27.027"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:25.563" endtime="20210801 13:34:27.028"></status>
+</kw>
+<kw name="Click product name in wish lish page" library="wish_list_page">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${wishListPageLocator}[txt_product_name]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:27.029" endtime="20210801 13:34:27.085"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:27.087" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/item_name$")'.</msg>
+<status status="PASS" starttime="20210801 13:34:27.086" endtime="20210801 13:34:28.280"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:27.029" endtime="20210801 13:34:28.281"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:27.028" endtime="20210801 13:34:28.281"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:25.562" endtime="20210801 13:34:28.281"></status>
+</kw>
+<kw name="Click add to wish list button" library="product_detail_page">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${productDetailPageLocator}[btn_add_to_wishlist]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:28.284" endtime="20210801 13:34:28.369"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:28.371" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/wish_list_button$")'.</msg>
+<status status="PASS" starttime="20210801 13:34:28.370" endtime="20210801 13:34:28.985"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:28.283" endtime="20210801 13:34:28.985"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:28.282" endtime="20210801 13:34:28.985"></status>
+</kw>
+<kw name="Verify number of wishlist item is not displayed" library="tool_bar_section">
+<kw name="Wait Until Element Is Not Visible" library="common_android_keywords">
+<arguments>
+<arg>${toolbarSectionLocator}[lbl_number_wishlist_item]</arg>
+</arguments>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:28.988" endtime="20210801 13:34:29.021"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:28.987" endtime="20210801 13:34:29.021"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:28.986" endtime="20210801 13:34:29.021"></status>
+</kw>
+<kw name="Click wishlist button" library="tool_bar_section">
+<kw name="Click Element" library="common_android_keywords">
+<arguments>
+<arg>${toolbarSectionLocator}[btn_wishlist]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:29.023" endtime="20210801 13:34:29.089"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210801 13:34:29.091" level="INFO">Clicking element 'android=UiSelector().resourceIdMatches(".*id/wishlist_button$")'.</msg>
+<status status="PASS" starttime="20210801 13:34:29.089" endtime="20210801 13:34:29.205"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:29.023" endtime="20210801 13:34:29.205"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:29.022" endtime="20210801 13:34:29.205"></status>
+</kw>
+<kw name="Verify customer wish list is empty" library="wish_list_page_functions">
+<kw name="Verify empty wishlist icon is displayed" library="wish_list_page">
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${wishListPageLocator}[icon_empty_wishlist]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:29.209" endtime="20210801 13:34:29.872"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:29.207" endtime="20210801 13:34:29.872"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:29.207" endtime="20210801 13:34:29.873"></status>
+</kw>
+<kw name="Verify empty wishlist text is displayed" library="wish_list_page">
+<kw name="Wait Element Is Visible" library="common_android_keywords">
+<arguments>
+<arg>${wishListPageLocator}[txt_empty_wishlist]</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210801 13:34:29.873" endtime="20210801 13:34:29.926"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:29.873" endtime="20210801 13:34:29.926"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:29.873" endtime="20210801 13:34:29.927"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:29.206" endtime="20210801 13:34:29.927"></status>
+</kw>
+<tags>
+<tag>TC2</tag>
+<tag>wish_list_function</tag>
+</tags>
+<status status="PASS" starttime="20210801 13:33:51.303" endtime="20210801 13:34:29.928" critical="yes"></status>
+</test>
+<kw name="Close SuperSport Application" library="common_android_keywords" type="teardown">
+<doc>Close current application while Appium session running</doc>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>AppiumLibrary.Close Application</arg>
+</arguments>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210801 13:34:29.931" endtime="20210801 13:34:30.808"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:29.930" endtime="20210801 13:34:30.808"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:34:29.930" endtime="20210801 13:34:30.808"></status>
+</kw>
+<status status="PASS" starttime="20210801 13:32:53.051" endtime="20210801 13:34:30.808"></status>
+</suite>
+<status status="PASS" starttime="20210801 13:32:53.020" endtime="20210801 13:34:30.813"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">TC1</stat>
+<stat pass="1" fail="0">TC2</stat>
+<stat pass="2" fail="0">wish_list_function</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Testcases">Testcases</stat>
+<stat pass="2" fail="0" id="s1-s1" name="Wish List">Testcases.Wish List</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

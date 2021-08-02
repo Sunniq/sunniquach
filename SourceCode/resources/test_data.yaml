@@ -1,0 +1,22 @@
+menu_category:
+  sport: Sports
+  men: Men
+  women: Women
+  kid: Kids
+  account: Account
+  more: More
+
+customer:
+  wishlist_customer:
+    email: HienQN_SmartOSC@gmail.com
+    password: 12345678
+
+device_info:
+  hien_device: 
+    deviceName: emulator-5554
+    platformName: android
+    platformVersion: '11'
+    app: C:/Users/Admin/Desktop/Hien_Homework/AppFile/SuperSport.apk
+    newCommandTimeout: 300
+    noReset: False
+    autoGrantPermissions: True
